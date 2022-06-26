@@ -1,0 +1,42 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      {% if data %}
+      <div class="row">
+        {% for item in data %}
+        <div class="col-sm-4 my-2">
+          <div class="card" style="width:18rem;">
+            {% if item.product_image %}
+
+
+            <img class="card-img-top" style="height: 355px; width:255pzx;" src="{{item.product_image.url}}" alt="loading">
+            {% endif %}
+            <div class="card-body">
+              <h5>{{item.name}}</h5>
+              <p>{{item.price}}</p>
+              <a class="btn btn-success" href="https://www.flipkart.com/infinix-hot-12-play-daylight-green-64-gb/p/itmd9c1091d0a662?pid=MOBGE2KY6JUTSNCP&lid=LSTMOBGE2KY6JUTSNCPGWOMYY&marketplace=FLIPKART&q=mobile&store=tyy%2F4io&srno=s_1_1&otracker=search&otracker1=search&fm=organic&iid=00713320-1115-4cb2-8fbb-f4ba83692b57.MOBGE2KY6JUTSNCP.SEARCH&ppt=pp&ppn=pp&ssid=zwua4smt5s0000001654412556864&qH=532c28d5412dd75b">Buy</a>
+            </div>
+          
+          </div>
+          
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>
